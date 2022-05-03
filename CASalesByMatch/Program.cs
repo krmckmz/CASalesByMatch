@@ -25,4 +25,26 @@
 
         return pairCount;
     }
+
+    static int CalculateMatchesByRemovingOdd(int n, int[] ar)
+    {
+        HashSet<int> set = new HashSet<int>();
+        int pairCount = 0;
+        for (int i = 0; i < n; i++)
+        {
+            int element = ar[i];
+            if (set.Contains(element))
+            {
+                set.Remove(element);
+                pairCount++;
+            }
+            else
+            {
+                set.Add(element);
+            }
+
+        }
+        return pairCount;
+
+    }
 }
